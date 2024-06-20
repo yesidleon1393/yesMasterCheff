@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+        .table {
+            color: white;
+        }
+        .table thead th {
+            vertical-align: middle;
+        }
+        .table tbody tr td {
+            vertical-align: middle;
+        }
+        .btn-success {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .btn-success:hover {
+            background-color: #45A049;
+            border-color: #45A049;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Menú Semanal</h1>
+    <table class="table table-bordered table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th>Día</th>
+                <th>Desayuno</th>
+                <th>Almuerzo</th>
+                <th>Cena</th>
+                <th>Check</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jueves</td>
+                <td>Arepa con queso<br>Jugo de naranja<br>Café con leche</td>
+                <td>Pollo sudado con papas, zanahorias y pimentón<br>Ensalada de tomate y cebolla<br>Limonada</td>
+                <td>Sopa de lentejas con zanahoria y pimentón<br>Fresas de postre</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Viernes</td>
+                <td>Calentado de arroz y lentejas<br>Huevos al gusto<br>Chocolate caliente</td>
+                <td>Carne molida guisada con cebolla, tomate y zanahoria<br>Papas salteadas<br>Ensalada de pimentón<br>Jugo de guanábana</td>
+                <td>Ensalada de pechuga de pollo con tomate, cebolla y zanahoria<br>Mandarina</td>
+                <td><button class="btn btn-success">Check</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>Changua<br>Arepa con mantequilla<br>Café con leche</td>
+                <td>Pollo sudado con papas y zanahorias<br>Ensalada de pimentón y tomate<br>Limonada</td>
+                <td>Sándwich de queso y tomate en pan integral<br>Manzana</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Tamal con arepa<br>Jugo de naranja<br>Café con leche</td>
+                <td>Lentejas guisadas con zanahoria, pimentón y tomate<br>Papas al vapor<br>Rodajas de naranja</td>
+                <td>Ensalada de alitas de pollo con tomate y cebolla<br>Mandarina</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>Arepa de huevo<br>Batido de pera y banano<br>Café con leche</td>
+                <td>Carne molida guisada con cebolla, tomate y zanahoria<br>Papas salteadas<br>Ensalada de zanahoria y pimentón<br>Jugo de lulo</td>
+                <td>Sopa de lentejas con zanahoria y pimentón<br>Rodajas de manzana</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Martes</td>
+                <td>Calentado de arroz con frijoles<br>Huevos al gusto<br>Jugo de naranja</td>
+                <td>Pechuga de pollo a la plancha con papas y zanahorias<br>Ensalada de tomate<br>Rodajas de pera</td>
+                <td>Ensalada de alitas de pollo con cebolla y pimentón<br>Mandarina</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Miércoles</td>
+                <td>Arepa con queso<br>Jugo de fresa<br>Café con leche</td>
+                <td>Lentejas guisadas con zanahoria, pimentón y tomate<br>Papas al vapor<br>Ensalada de pimentón<br>Limonada</td>
+                <td>Sándwich de queso y tomate en pan integral<br>Fresas de postre</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+            <tr>
+                <td>Jueves</td>
+                <td>Arepa con queso<br>Jugo de naranja<br>Café con leche</td>
+                <td>Pollo sudado con papas, zanahorias y pimentón<br>Ensalada fresca de tomate y cebolla<br>Limonada</td>
+                <td>Sopa de lentejas con zanahoria y pimentón<br>Fresas de postre</td>
+                <td><button class="btn btn-success">Check</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.btn-success').click(function() {
+            $(this).toggleClass('btn-secondary').toggleClass('btn-success');
+            if ($(this).hasClass('btn-secondary')) {
+                $(this).text('Checked');
+            } else {
+                $(this).text('Check');
+            }
+        });
+    });
+</script>
+</body>
+</html>
