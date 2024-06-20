@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yesMasterCheff</title>
+    <title>Menú Semanal Editable</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -27,15 +27,22 @@
             background-color: #45A049;
             border-color: #45A049;
         }
-        h1 {
-            margin-bottom: 30px;
+        .btn-success:focus {
+            box-shadow: none;
+        }
+        .editable {
+            border: none;
+            background: transparent;
+            color: inherit;
+            width: 100%;
+            outline: none;
         }
     </style>
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="text-center">Menú de la semana yesMasterChef</h1>
-    <table class="table table-bordered table-dark">
+    <h1 class="text-center">Menú Semanal Editable</h1>
+    <table id="menu-table" class="table table-bordered table-dark">
         <thead class="thead-dark">
             <tr>
                 <th>Día</th>
@@ -48,9 +55,9 @@
         <tbody>
             <tr>
                 <td>Jueves</td>
-                <td>Arepa con queso<br>Jugo de naranja<br>Café con leche</td>
-                <td>Pollo sudado con papas, zanahorias y pimentón<br>Ensalada de tomate y cebolla<br>Limonada</td>
-                <td>Sopa de lentejas con zanahoria y pimentón<br>Fresas de postre</td>
+                <td contenteditable="true" class="editable">Arepa con queso<br>Jugo de naranja<br>Café con leche</td>
+                <td contenteditable="true" class="editable">Pollo sudado con papas, zanahorias y pimentón<br>Ensalada de tomate y cebolla<br>Limonada</td>
+                <td contenteditable="true" class="editable">Sopa de lentejas con zanahoria y pimentón<br>Fresas de postre</td>
                 <td><button class="btn btn-success">Check</button></td>
             </tr>
             <tr>
@@ -102,6 +109,7 @@
                 <td>Sopa de lentejas con zanahoria y pimentón<br>Fresas de postre</td>
                 <td><button class="btn btn-success">Check</button></td>
             </tr>
+            <!-- Aquí van los demás días del menú, sigue el mismo formato -->
         </tbody>
     </table>
 </div>
@@ -110,6 +118,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
+        // Función para guardar los cambios al hacer clic fuera de la celda editable
+        $('#menu-table td[contenteditable=true]').blur(function() {
+            var newText = $(this).text().trim();
+            $(this).html(newText);
+        });
+
+        // Función para marcar como "checked" al hacer clic en el botón
         $('.btn-success').click(function() {
             $(this).toggleClass('btn-secondary').toggleClass('btn-success');
             if ($(this).hasClass('btn-secondary')) {
